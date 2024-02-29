@@ -1,0 +1,72 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "name": "Festival international de Carthage",
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page",
+      "img": "event1.jpg",
+      "price": 30,
+      "nbTickets": 10,
+      "nbParticipants": 10,
+      "like": false
+    },
+    {
+      "id": "2",
+      "name": "Festival de la médina de Tunis",
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page",
+      "img": "event2.jpg",
+      "price": 15,
+      "nbTickets": 4,
+      "nbParticipants": 30,
+      "like": false
+    },
+    {
+      "id": "3",
+      "name": "Journées cinématographiques de Carthage (JCC)",
+      "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page",
+      "img": "event3.jpg",
+      "price": 7,
+      "nbTickets": 20,
+      "nbParticipants": 35,
+      "like": false
+    },
+    {
+      "id": "d719",
+      "name": [
+        "test"
+      ],
+      "description": [
+        "test"
+      ],
+      "img": "",
+      "price": [
+        "55"
+      ],
+      "nbTickets": [
+        "55"
+      ],
+      "nbParticipants": 0,
+      "like": false
+    },
+    {
+      "id": "750b",
+      "name": "aa",
+      "description": "aaa",
+      "img": "",
+      "price": "022",
+      "nbTickets": "454",
+      "nbParticipants": 0,
+      "like": false
+    },
+    {
+      "id": "0596",
+      "name": "ttttt",
+      "description": "ccc",
+      "img": "sold_out.png",
+      "price": "0645",
+      "nbTickets": "077",
+      "nbParticipants": 0,
+      "like": false
+    }
+  ]
+}
