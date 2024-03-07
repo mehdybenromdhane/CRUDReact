@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState  ,useEffect} from 'react'
 import { Button, Container, Form } from "react-bootstrap";
-import { addEvent } from '../service/api';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addEventReducer } from '../redux/slices/eventsSlice';
+import { addEvent, editEvent, getallEvents } from '../service/api';
+import { useNavigate, useParams } from 'react-router-dom';
 
-function AddEvent() { 
+function UpdateEvent() { 
 
 
+    const param = useParams()
 
-    const dispatch = useDispatch()
     const navigate = useNavigate()
      const  [eventItem , setEventItem] = useState({
         name:"",
@@ -21,7 +19,20 @@ function AddEvent() {
         like:false
     })
 
-
+    const fetchEvent = async () => {
+        const eventResult = await getallEvents(param.id);
+        setEventItem(eventResult.data);
+  
+        
+   
+      };
+  
+    useEffect(() => {
+      
+        
+        fetchEvent(param.id);
+      }, []);
+    
     const onValueChange =(e)=>{
 
         setEventItem({...eventItem , [e.target.name] : e.target.value})
@@ -35,19 +46,17 @@ function AddEvent() {
     }
 
 
-    const AddEvent = async()=>{
+    const UpdateEvent = async()=>{
 
-        const eventResult = await addEvent(eventItem)
-
-        dispatch(addEventReducer(eventItem))
-        if(eventResult.status ==201){
+        const eventResult = await editEvent(param.id , eventItem)
+        if(eventResult.status ==200){
             navigate("/events")
         }
     }
 
   return (
     <Container style={{ marginTop: "30px" }}>
-      <h2>Add a new Event to your Event List</h2>
+      <h2>Update  Event </h2>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
@@ -101,8 +110,8 @@ value={eventItem.nbTickets}
             onChange={(e)=>onFile(e)}
           />
         </Form.Group>
-        <Button variant="primary" onClick={AddEvent}>
-          Add an Event
+        <Button variant="primary" onClick={UpdateEvent}>
+          Update
         </Button>
         <Button  variant="secondary">
           Cancel
@@ -112,4 +121,4 @@ value={eventItem.nbTickets}
   )
 }
 
-export default AddEvent
+export default UpdateEvent

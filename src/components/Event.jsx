@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
@@ -56,6 +56,18 @@ function Event(props) {
           </Button>
         <Button variant="primary" disabled={event.nbTickets?false:true} onClick={buy}>Book an event</Button>
 
+
+        
+        <Button variant="danger" onClick={()=>props.delete(event.id)}>Delete</Button>
+
+
+<Button variant='success'>
+   <Link to={`/events/update/${event.id}`}>
+
+    Update
+   </Link>
+
+</Button>
       </Card.Body>
     </Card>
     
